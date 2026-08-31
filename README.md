@@ -4,100 +4,82 @@
 
 # Matte
 
-**Uma frase curta dizendo o que o Matte faz.**
+**Assistente técnico interno da Zup. Tira dúvidas de infraestrutura e ferramentas — rápido e sem abrir chamado.**
 
-[![licença](https://img.shields.io/badge/licença-MIT-7E2A2C?style=for-the-badge&labelColor=3A1214)](LICENSE)
-[![versão](https://img.shields.io/badge/versão-0.1.0-7E2A2C?style=for-the-badge&labelColor=3A1214)]()
-[![feito com](https://img.shields.io/badge/feito_com-LINGUAGEM-FFD9A8?style=for-the-badge&labelColor=3A1214)]()
+![StackSpot AI](https://img.shields.io/badge/StackSpot_AI-Agent-7E2A2C?style=for-the-badge&labelColor=3A1214)
+![tipo](https://img.shields.io/badge/tipo-conversacional-7E2A2C?style=for-the-badge&labelColor=3A1214)
+![status](https://img.shields.io/badge/status-ativo-FFD9A8?style=for-the-badge&labelColor=3A1214)
 
-<sub>[Instalação](#instalação) · [Uso](#uso) · [Configuração](#configuração) · [Contribuindo](#contribuindo)</sub>
+<sub>[O que ele resolve](#o-que-ele-resolve) · [Como usar](#como-usar) · [Bases de conhecimento](#bases-de-conhecimento) · [O que ele não faz](#o-que-ele-não-faz) · [Contribuindo](#contribuindo)</sub>
 
 </div>
 
 ---
 
-## Oi, eu sou o Matte
+> **Olá, Zupper!** Eu sou o Matte, seu assistente técnico inteligente.
+> Estou aqui para tirar suas dúvidas sobre a infraestrutura e as tecnologias da Zup
+> de forma rápida e precisa. O que você deseja configurar ou solucionar hoje? 🚀
 
-Duas ou três linhas na voz dele: qual problema ele resolve e pra quem. Como o
-Matte tem cara, vale escrever essa parte em primeira pessoa — funciona
-surpreendentemente bem pra fixar o projeto na memória de quem lê.
+## O que ele resolve
 
-<img src="docs/demo.gif" width="100%" alt="Matte em ação">
+| Domínio | Cobre | Exemplo de pergunta |
+|---|---|---|
+| **VPN & MFA** | Cisco AnyConnect, redefinição de autenticador | *"Como configuro o AnyConnect no macOS?"* |
+| **Nuvem & Kubernetes** | Perfis AWS SSO, quotas, namespaces no EKS | *"Como vejo a quota do meu namespace no EKS?"* |
+| **Charles CD** | Deploys com círculos | *"Como crio um círculo pra testar com 5% do tráfego?"* |
+| **Ritchie CLI** | Criação e uso de fórmulas | *"Como adiciono um repositório de fórmulas no Ritchie?"* |
+| **Horusec** | Análise de vulnerabilidades | *"Como ignoro um falso positivo do Horusec?"* |
+| **Acessos seguros** | Conexão a bancos privados via Bastion Host | *"Como abro um túnel pro banco via Bastion?"* |
+| **ServiceNow** | Categorização de chamados e SLAs | *"Qual a categoria certa pra pedido de acesso à AWS?"* |
 
-## Instalação
+## Como usar
 
-```bash
-GERENCIADOR install matte
-```
+**Portal StackSpot AI** — abra o agente pelo catálogo e mande a dúvida no chat.
 
-<details>
-<summary>Instalar do fonte</summary>
+**Extensão no IDE** — selecione o Matte como agente ativo e pergunte sem sair do editor.
 
-```bash
-git clone https://github.com/USUARIO/matte.git
-cd matte
-COMANDO_DE_BUILD
-```
+**Spot da squad** — [`ai.stackspot.com/agents/a96a47-matte-seu-agente-de-ti-`]() (peça acesso de leitura pro time responsável).
 
-</details>
+### Perguntando melhor
 
-## Uso
+O Matte busca por similaridade nas bases de conhecimento, então **use os termos que aparecem na doc**. Comparando:
 
-```bash
-matte [opções] <argumento>
-```
+| ❌ Vago | ✅ Direto |
+|---|---|
+| "a vpn não funciona" | "AnyConnect dá erro de certificado ao conectar" |
+| "não consigo acessar o banco" | "como conectar no RDS privado via Bastion Host" |
+| "problema no deploy" | "Charles CD: círculo não recebe tráfego após o deploy" |
 
-### Exemplos
+Um erro colado na íntegra vale mais que qualquer descrição.
 
-```bash
-matte EXEMPLO_REAL_1
-matte --formato json EXEMPLO_REAL_2
-cat entrada.txt | matte -
-```
 
-### Opções
 
-| Flag | Atalho | Padrão | Descrição |
-|------|--------|--------|-----------|
-| `--formato` | `-f` | `texto` | Saída: `texto`, `json`, `csv` |
-| `--verbose` | `-v` | `false` | Mostra o que está acontecendo |
-| `--config` | `-c` | `~/.matterc` | Caminho do arquivo de config |
-| `--quiet` | `-q` | `false` | Desliga o banner e os logs |
-| `--help` | `-h` | — | Mostra a ajuda |
+## O que ele não faz
 
-## Configuração
+- **Não concede acessos.** Ele explica o caminho; a liberação sai por chamado ou pelo time dono do recurso.
+- **Não abre chamado no ServiceNow.** Ele diz a categoria certa — abrir é com você.
+- **Não substitui a squad de Infra/SecOps** em incidente. Se está de pé caindo, acione o plantão.
+- **Pode estar desatualizado.** A resposta vale o que valem as bases — se a doc mudou e a KS não, ele erra.
 
-Se existir um `.matterc` no diretório atual ou no seu home, ele é carregado sozinho:
-
-```yaml
-formato: json
-verbose: true
-```
-
-Precedência: flags > variáveis de ambiente > arquivo de config > padrões.
-
-## Paleta
-
-O Matte tem cor própria. Se você for fazer site, docs ou mais assets, use estas:
-
-| | Cor | Hex | Onde usar |
-|---|---|---|---|
-| 🟥 | Corpo | `#7E2A2C` | Cor principal, títulos, links |
-| 🟫 | Sombra | `#5C1D1F` | Hover, bordas |
-| ⬛ | Casca | `#3A1214` | Fundo escuro, base dos badges |
-| 🟨 | Olhos | `#FFD9A8` | Acento, destaques, sucesso |
-| ⬜ | Brilho | `#FFF1DE` | Texto sobre fundo escuro |
-| ⬜ | Fundo | `#EAE4E1` | Fundo claro |
+> ⚠️ **Nunca cole credenciais, tokens, chaves ou dados de cliente no chat.** Se um passo pede segredo, ele te diz *onde* buscar, não pede pra você mostrar.
 
 ## Contribuindo
 
-PRs bem-vindos. Pra mudanças grandes, abre uma issue antes.
+**Resposta errada ou desatualizada?** Abra uma issue com a pergunta feita, a resposta recebida e a resposta correta. É o que mais ajuda.
 
-```bash
-COMANDO_DE_TESTE
-COMANDO_DE_LINT
-```
+**Quer adicionar conhecimento?** Abra PR em `docs/` seguindo o padrão: título claro, uma seção por dúvida, passo a passo numerado e os termos que a pessoa realmente digitaria. Depois do merge, a KS é atualizada.
 
-## Licença
+## Paleta
 
-[MIT](LICENSE) © SEU_NOME
+| | Cor | Hex | Uso |
+|---|---|---|---|
+| 🟥 | Corpo | `#7E2A2C` | Principal |
+| 🟫 | Sombra | `#5C1D1F` | Hover, bordas |
+| ⬛ | Casca | `#3A1214` | Fundo escuro |
+| 🟨 | Olhos | `#FFD9A8` | Acento |
+| ⬜ | Brilho | `#FFF1DE` | Texto sobre escuro |
+| ⬜ | Fundo | `#EAE4E1` | Fundo claro |
+
+## Time
+
+Mantido por **`isa tessarin`** 
