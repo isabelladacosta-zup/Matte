@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="1787920935236.png" width="160" alt="Matte">
+<img src="1787923349117.png" width="160" alt="Matte">
 
 # Matte
 
@@ -63,11 +63,7 @@ Um erro colado na íntegra vale mais que qualquer descrição.
 
 > ⚠️ **Nunca cole credenciais, tokens, chaves ou dados de cliente no chat.** Se um passo pede segredo, ele te diz *onde* buscar, não pede pra você mostrar.
 
-## Contribuindo
 
-**Resposta errada ou desatualizada?** Abra uma issue com a pergunta feita, a resposta recebida e a resposta correta. É o que mais ajuda.
-
-**Quer adicionar conhecimento?** Abra PR em `docs/` seguindo o padrão: título claro, uma seção por dúvida, passo a passo numerado e os termos que a pessoa realmente digitaria. Depois do merge, a KS é atualizada.
 
 ## Paleta
 
